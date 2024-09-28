@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+    origin: process.env.AP_CORS_ORIGIN || "http://localhost:3000",
     credentials: true,
   })
 );
@@ -22,7 +22,7 @@ app.use("/api/register", RegisterRouter);
 
 //DB Connection
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect(process.env.AP_MONGODB_URL)
   .then(() => console.log("!!!!!!!!!Database connected!!!!!!!"))
   .catch((err) => console.error("Database connection failed:", err));
 

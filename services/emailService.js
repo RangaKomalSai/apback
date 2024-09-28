@@ -10,13 +10,13 @@ async function sendEmail(recipientEmail, subject, body) {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.SMTP_MAIL,
-      pass: process.env.SMTP_PSWD,
+      user: process.env.AP_SMTP_MAIL,
+      pass: process.env.AP_SMTP_PSWD,
     },
   });
 
   const mailOptions = {
-    from: process.env.SMTP_MAIL,
+    from: process.env.AP_SMTP_MAIL,
     to: recipientEmail,
     // subject:
     //   "Verification OTP for registering to Profectus | Abhyuday, IIT Bombay",
